@@ -14,6 +14,7 @@ RUN rm -f apache-tomcat-$TOMCAT_VER.tar.gz
 
 # Configure environment
 ENV CATALINA_HOME=/app/tomcat$TOMCAT_MAJOR/apache-tomcat-$TOMCAT_VER
+ENV PATH=$CATALINA_HOME/bin:$PATH
 
 # Start Tomcat
-CMD ["$CATALINA_HOME/bin/startup.sh"]
+CMD ["catalina.sh", "run"]
