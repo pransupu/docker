@@ -15,6 +15,8 @@ RUN ls -al $CATALINA_HOME/webapps
 
 RUN rm -f jenkins.war
 
+# Add packages that may be needed for Jenkins
+RUN apt-get update && apt-get install -y git groovy
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
